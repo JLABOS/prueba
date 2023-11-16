@@ -20,7 +20,7 @@ jobs:
         with:
           token: '${{ github.token }}'
           environment-url: https://janneth-condori.atlassian.net
-          environment: production
+          environment: staging
         # more steps below where you run your deployment scripts inside the same action
       - name: Deploy my app
         run: |
