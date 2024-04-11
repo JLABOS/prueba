@@ -13,7 +13,7 @@ jobs:
     env:
       SHA: ${{ github.event.deployment.sha }}
       ENVIRONMENT: ${{ github.event.deployment.environment }}
-      DEPLOY_ID: $(git log -1 --format=%B ${{ github.sha }})
+      DEPLOY_ID: ${{ github.event.deployment.id}}
     permissions:
       deployments: write
 
@@ -39,18 +39,14 @@ jobs:
           echo "Commit Message: $(git log -1 --format=%B ${{ github.sha }})"
           echo "Author Name: $(git log -1 --format=%an ${{ github.sha }})"
 
-      - name: Set Commit Messages Output
-        id: set-commit-messages
-        run: |
-          echo "::set-output name=commit_messages::$(git log --format=%B -n 1 ${{ github.sha }})"
-
       - name: Update deployment status (success)
         if: success()
         uses: chrnorm/deployment-status@v2
         with:
           token: '${{ github.token }}'
           environment-url: ${{ steps.deployment.outputs.environment_url }}
-          deployment-id: ${{ steps.set-commit-messages.outputs.commit_messages }}
+          deployment-id: ${{env.DEPLOY_ID}}
+          log-url: "https://github.com/JLABOS/prueba/commit/e214891b154bcd9c629a906f0c5cab89568d6a41/checks"
           state: 'success'
 
       - name: Update deployment status (failure)
@@ -59,5 +55,5 @@ jobs:
         with:
           token: '${{ github.token }}'
           environment-url: ${{ steps.deployment.outputs.environment_url }}
-          deployment-id: ${{ steps.set-commit-messages.outputs.commit_messages }}
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
           state: 'failure'
