@@ -1,0 +1,63 @@
+name: Deploy tag
+
+on:
+  push:
+    # Pattern matched against refs/tags
+    tags:        
+      - '*'
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    env:
+      SHA: ${{ github.event.deployment.sha }}
+      ENVIRONMENT: ${{ github.event.deployment.environment }}
+      DEPLOY_ID: $(git log -1 --format=%B ${{ github.sha }})
+    permissions:
+      deployments: write
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: chrnorm/deployment-action@v2
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          token: '${{ github.token }}'
+          environment-url: https://janneth-condori.atlassian.net
+          environment: production
+        # more steps below where you run your deployment scripts inside the same action
+      - name: Deploy my app
+        run: |
+          # add your deployment code here
+
+      - name: Show Tag and Commit Info
+        run: |
+          echo "Tag Name: ${{ github.ref }}"
+          echo "Tag Commit SHA: ${{ github.sha }}"
+          echo "Commit Message: $(git log -1 --format=%B ${{ github.sha }})"
+          echo "Author Name: $(git log -1 --format=%an ${{ github.sha }})"
+
+      - name: Set Commit Messages Output
+        id: set-commit-messages
+        run: |
+          echo "::set-output name=commit_messages::$(git log --format=%B -n 1 ${{ github.sha }})"
+
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: '${{ github.token }}'
+          environment-url: ${{ steps.deployment.outputs.environment_url }}
+          deployment-id: ${{ steps.set-commit-messages.outputs.commit_messages }}
+          state: 'success'
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@v2
+        with:
+          token: '${{ github.token }}'
+          environment-url: ${{ steps.deployment.outputs.environment_url }}
+          deployment-id: ${{ steps.set-commit-messages.outputs.commit_messages }}
+          state: 'failure'
