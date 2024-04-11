@@ -45,7 +45,7 @@ jobs:
         with:
           token: '${{ github.token }}'
           environment-url: ${{ steps.deployment.outputs.environment_url }}
-          deployment-id: ${{env.DEPLOY_ID}}
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
           log-url: "https://github.com/JLABOS/prueba/commit/e214891b154bcd9c629a906f0c5cab89568d6a41/checks"
           state: 'success'
 
