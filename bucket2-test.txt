@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "saas-sb-mojixtrack-io-293717",
+  "private_key_id": "8300808e94e0ea8dd51a2baa12e0f21e80fc3a36",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCx1lirV7SJYpoo\n1rCbxgG8Xy+pgtulB2SISXPJACaHcqdaztckUhtTBT79fK80Hr86G2dFuKt09uQD\nRhpui93GO03zMQyKkrDD5JGGWutkiQx1bHwxMWmqP+UN1leknKMw3oCB6p8m/Qmw\nB87S2hSBigbqjLWobbo8mHD8ALkoJhu+/Y7iGpKCTj4Mw0mA6htOxrZ5P/MJUEsh\n5r75moDtLf5j0yJqJFkpuRxW5V6xUhDznnjdgv56/QKRer8wycNUnwLyLILrcT+w\nXQiSVdjDwGj1jdT3s9ssSiB8nazAQF3OPrXyo0ez1TsAv5tXpmgSkmfe0cl1PLr9\neqriX0VRAgMBAAECggEABY73T7MKqyD4RA6tJPqhUG0M4pMQQJ4p89eQj/0E90ar\nuUXN9C5BI+JorQgiEB07lA+fYKQXGdgOBECDRXwc1wbArDlW1ML6gEOgknmSMh7V\nffBsM6ZsJic1RoOHUuzBbgmFAeqJMHEIGzwskwBq09SyXCTrQvkxBmwBBg4TZiWO\nHC2kxWPQ/IPrFMC9wAwVaMTN7dQghwN4mdYTDhTy6FnL/Z5UuS5FXhXEROdQ2S1g\n97qYvpZp0CG6asoB6uujSaqCmnEx9QI4+lAG7vTQrDJ4ZlU5ZiVg6ELFLuo77m/+\nB48/OHqUZeWMWmHSSrewnb307VaRVL5vhYV/qdsWxQKBgQDXk9Z9tGxHn0SyXEty\nM1EommVVwwn5H48JCYnU8NI3QlLNrg1zPSlxLKqfQvoIY3nUjkR0FF8XsxI89J+9\neudnQl7/rcGNsbUprzbMXM5Qys/s+2PFaKa4dldBWSU3TBMOJRjBkMyPjJzJrcwB\nck7tqASM7VgT7nhfrV4NMDmehQKBgQDTLubA0MsABFLcyW7lAPzsOXDxkmi2i244\nFwy0W+kq9YjCE5PW1TT+FdjnM5xNBoyuW/hyuC+8A15bXIDFIK2wJtATJR20eUBc\n4apiyWKLGwzMvEFRl8PM00upov8gsG9H8o6d9x1Vv8TiBKTDGfKnp7WrdS2uvSZT\nDJTRhBqjXQKBgDMftkA9Z2hc1vfNd37vuJF+fAWoqVbRKySjhHJhYhkEu4pXeo0X\nthpG03fNdGpE3QGRc55rrll6eBrIkJFo8jPEw66y0DIAMMxf5wj0AWGbl0/GFlUc\nil04g1zV/UNt4R77oTFWW4y3df9GHhlBuIIX1GxvZPHlHdrizGkoRKHZAoGAGpCn\nzlF1d8cTdVqRbJU3O6/uGTVFntDjSIL9wiJdrl28mk1EJ54iUGQHKO5BFx9fyv8e\nva+VsZzq3atBN4rozmPTgNUGa5FlG0n32P1kPANnFMoJnW3t33Ik7m3mkgIfvXkx\nn4VaV1MMPTJAV5qH/7cFD1BqMrTwgTnv7nsjrrECgYEA0ApLbMPvvSR4VZ/QT5IH\neZyMG6Mjr5MLKGHk0zge/xYhDl5Uf/ta55KRdwEnv6vY59lgQ782vCGBq3e1Nidu\nW5MJKIjRm76rHx9aUb6rU/q4fnNmbruXGPzw+iCcopcdnmDJEucZlPwT1WcHN55c\nMpFNSskq+Agx22FlHFhiB7M=\n-----END PRIVATE KEY-----\n",
+  "client_email": "buckets-reading@saas-sb-mojixtrack-io-293717.iam.gserviceaccount.com",
+  "client_id": "117091867618461282821",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/buckets-reading%40saas-sb-mojixtrack-io-293717.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
